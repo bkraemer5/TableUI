@@ -23,12 +23,18 @@ public class MainActivity extends AppCompatActivity {
         TextView tv = new TextView(this);
         LinearLayout lv = new LinearLayout(this);
 
-        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.MATCH_PARENT
-        );
+        GridLayout.Spec row1 = GridLayout.spec(0, 1f);
+        GridLayout.Spec row2 = GridLayout.spec(1, 1f);
+        GridLayout.Spec row3 = GridLayout.spec(2, 1f);
+        GridLayout.Spec row4 = GridLayout.spec(3, 1f);
+        GridLayout.Spec row5 = GridLayout.spec(4, 1f);
+        GridLayout.Spec row6 = GridLayout.spec(5, 1f);
 
-        ViewGroup.LayoutParams gparams = new ViewGroup.LayoutParams(
+        GridLayout.Spec col1 = GridLayout.spec(0, 1f);
+        GridLayout.Spec col2 = GridLayout.spec(1, 1f);
+        GridLayout.Spec col3 = GridLayout.spec(2, 1f);
+
+        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT
         );
@@ -45,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
 
         mainLinear.addView(tv);
 
-        //mainGrid.setLayoutParams(gparams);
         mainGrid.setOrientation(GridLayout.HORIZONTAL);
         mainGrid.setRowCount(3);
         mainGrid.setColumnCount(3);
@@ -61,8 +66,6 @@ public class MainActivity extends AppCompatActivity {
         tv.setBackgroundColor(Color.WHITE);
         tv.setGravity(Gravity.CENTER);
 
-        GridLayout.Spec row1 = GridLayout.spec(0, 1f);
-        GridLayout.Spec col1 = GridLayout.spec(0, 1f);
         GridLayout.LayoutParams fillParams = new GridLayout.LayoutParams(
                 row1, col1);
         fillParams.setMargins(2, 2, 2, 2);
@@ -71,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
         // CELL 1 END
 
         // CELL 2 -------------------------------------------------
-        GridLayout.Spec col2 = GridLayout.spec(1, 1f);
         fillParams = new GridLayout.LayoutParams(
                 row1, col2);
 
@@ -107,7 +109,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         // CELL3 -------------------------------------------
-        GridLayout.Spec col3 = GridLayout.spec(2, 1f);
         fillParams = new GridLayout.LayoutParams(
                 row1, col3);
 
@@ -138,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
         // CELL 3 END
 
         // CELL 4 ------------------------------------------
-        GridLayout.Spec row2 = GridLayout.spec(1, 1f);
+
         fillParams = new GridLayout.LayoutParams(
                 row2, col1);
 
@@ -154,18 +155,18 @@ public class MainActivity extends AppCompatActivity {
         tv.setTypeface(Typeface.DEFAULT_BOLD);
         tv.setTextColor(Color.BLACK);
         tv.setTextSize(7);
-        tv.setBackgroundColor(Color.BLUE);
+        tv.setBackgroundColor(Color.rgb(179, 255, 255));
         tv.setGravity(Gravity.CENTER);
         lv.addView(tv, lparams);
 
         tv = new TextView(this);
         tv.setTextSize(7);
-        tv.setBackgroundColor(Color.BLUE);
+        tv.setBackgroundColor(Color.rgb(179, 255, 255));
         lv.addView(tv, lparams);
 
         tv = new TextView(this);
         tv.setTextSize(7);
-        tv.setBackgroundColor(Color.BLUE);
+        tv.setBackgroundColor(Color.rgb(179, 255, 255));
         lv.addView(tv, lparams);
 
         tv = new TextView(this);
@@ -212,7 +213,7 @@ public class MainActivity extends AppCompatActivity {
         GridLayout cell5Grid = new GridLayout(this);
         fillParams = new GridLayout.LayoutParams(
                 row2, col2);
-        cell5Grid.setRowCount(2);
+        cell5Grid.setRowCount(6);
         cell5Grid.setColumnCount(2);
         cell5Grid.setOrientation(GridLayout.HORIZONTAL);
 
@@ -228,45 +229,165 @@ public class MainActivity extends AppCompatActivity {
         tv.setTypeface(Typeface.DEFAULT_BOLD);
         tv.setTextColor(Color.BLACK);
         tv.setTextSize(7);
-        tv.setBackgroundColor(Color.BLUE);
+        tv.setBackgroundColor(Color.rgb(179, 255, 255));
         tv.setGravity(Gravity.CENTER);
         lv.addView(tv, lparams);
 
         tv = new TextView(this);
         tv.setText("min <= hour && hour <= max");
         tv.setTextSize(7);
-        tv.setBackgroundColor(Color.BLUE);
+        tv.setBackgroundColor(Color.rgb(179, 255, 255));
         tv.setGravity(Gravity.CENTER);
         lv.addView(tv, lparams);
 
-
-        //LinearLayout cell4layout = new LinearLayout(this);
-        //cell4layout.setOrientation(LinearLayout.HORIZONTAL);
         GridLayout.LayoutParams cell5Params = new GridLayout.LayoutParams(
                 row1, col1);
+        cell5Params.setMargins(2, 2, 2, 2);
 
         tv = new TextView(this);
         tv.setText("int min");
         tv.setTextSize(7);
-        tv.setBackgroundColor(Color.BLUE);
+        tv.setBackgroundColor(Color.rgb(179, 255, 255));
         tv.setGravity(Gravity.CENTER);
         tv.setLayoutParams(cell5Params);
         cell5Grid.addView(tv);
 
-        cell5Params.setMargins(2, 2, 2, 2);
+
 
         cell5Params = new GridLayout.LayoutParams(
                 row1, col2);
+        cell5Params.setMargins(2, 2, 2, 2);
 
         tv = new TextView(this);
         tv.setText("int max");
         tv.setTextSize(7);
-        tv.setBackgroundColor(Color.BLUE);
+        tv.setBackgroundColor(Color.rgb(179, 255, 255));
         tv.setGravity(Gravity.CENTER);
         tv.setLayoutParams(cell5Params);
         cell5Grid.addView(tv);
 
+
+        cell5Params = new GridLayout.LayoutParams(
+                row2, col1);
         cell5Params.setMargins(2, 2, 2, 2);
+
+        tv = new TextView(this);
+        tv.setText(" From");
+        tv.setTextSize(7);
+        tv.setTypeface(Typeface.DEFAULT_BOLD);
+        tv.setBackgroundColor(Color.rgb(255, 255, 153));
+        tv.setGravity(Gravity.LEFT);
+        tv.setLayoutParams(cell5Params);
+        cell5Grid.addView(tv);
+
+        cell5Params = new GridLayout.LayoutParams(
+                row2, col2);
+        cell5Params.setMargins(2, 2, 2, 2);
+
+        tv = new TextView(this);
+        tv.setText(" To");
+        tv.setTextSize(7);
+        tv.setTypeface(Typeface.DEFAULT_BOLD);
+        tv.setBackgroundColor(Color.rgb(255, 255, 153));
+        tv.setGravity(Gravity.LEFT);
+        tv.setLayoutParams(cell5Params);
+        cell5Grid.addView(tv);
+
+        cell5Params = new GridLayout.LayoutParams(
+                row3, col1);
+        cell5Params.setMargins(2, 2, 2, 2);
+
+        tv = new TextView(this);
+        tv.setText("0 ");
+        tv.setTextSize(7);
+        tv.setBackgroundColor(Color.rgb(255, 255, 153));
+        tv.setGravity(Gravity.RIGHT);
+        tv.setLayoutParams(cell5Params);
+        cell5Grid.addView(tv);
+
+        cell5Params = new GridLayout.LayoutParams(
+                row3, col2);
+        cell5Params.setMargins(2, 2, 2, 2);
+
+        tv = new TextView(this);
+        tv.setText("11 ");
+        tv.setTextSize(7);
+        tv.setBackgroundColor(Color.rgb(255, 255, 153));
+        tv.setGravity(Gravity.RIGHT);
+        tv.setLayoutParams(cell5Params);
+        cell5Grid.addView(tv);
+
+        cell5Params = new GridLayout.LayoutParams(
+                row4, col1);
+        cell5Params.setMargins(2, 2, 2, 2);
+
+        tv = new TextView(this);
+        tv.setText("12 ");
+        tv.setTextSize(7);
+        tv.setBackgroundColor(Color.rgb(255, 255, 153));
+        tv.setGravity(Gravity.RIGHT);
+        tv.setLayoutParams(cell5Params);
+        cell5Grid.addView(tv);
+
+        cell5Params = new GridLayout.LayoutParams(
+                row4, col2);
+        cell5Params.setMargins(2, 2, 2, 2);
+
+        tv = new TextView(this);
+        tv.setText("17 ");
+        tv.setTextSize(7);
+        tv.setBackgroundColor(Color.rgb(255, 255, 153));
+        tv.setGravity(Gravity.RIGHT);
+        tv.setLayoutParams(cell5Params);
+        cell5Grid.addView(tv);
+
+        cell5Params = new GridLayout.LayoutParams(
+                row5, col1);
+        cell5Params.setMargins(2, 2, 2, 2);
+
+        tv = new TextView(this);
+        tv.setText("18 ");
+        tv.setTextSize(7);
+        tv.setBackgroundColor(Color.rgb(255, 255, 153));
+        tv.setGravity(Gravity.RIGHT);
+        tv.setLayoutParams(cell5Params);
+        cell5Grid.addView(tv);
+
+        cell5Params = new GridLayout.LayoutParams(
+                row5, col2);
+        cell5Params.setMargins(2, 2, 2, 2);
+
+        tv = new TextView(this);
+        tv.setText("21 ");
+        tv.setTextSize(7);
+        tv.setBackgroundColor(Color.rgb(255, 255, 153));
+        tv.setGravity(Gravity.RIGHT);
+        tv.setLayoutParams(cell5Params);
+        cell5Grid.addView(tv);
+
+        cell5Params = new GridLayout.LayoutParams(
+                row6, col1);
+        cell5Params.setMargins(2, 2, 2, 2);
+
+        tv = new TextView(this);
+        tv.setText("22 ");
+        tv.setTextSize(7);
+        tv.setBackgroundColor(Color.rgb(255, 255, 153));
+        tv.setGravity(Gravity.RIGHT);
+        tv.setLayoutParams(cell5Params);
+        cell5Grid.addView(tv);
+
+        cell5Params = new GridLayout.LayoutParams(
+                row6, col2);
+        cell5Params.setMargins(2, 2, 2, 2);
+
+        tv = new TextView(this);
+        tv.setText("23 ");
+        tv.setTextSize(7);
+        tv.setBackgroundColor(Color.rgb(255, 255, 153));
+        tv.setGravity(Gravity.RIGHT);
+        tv.setLayoutParams(cell5Params);
+        cell5Grid.addView(tv);
 
         lv.addView(cell5Grid);
 
@@ -289,7 +410,7 @@ public class MainActivity extends AppCompatActivity {
         tv.setTypeface(Typeface.DEFAULT_BOLD);
         tv.setTextColor(Color.BLACK);
         tv.setTextSize(7);
-        tv.setBackgroundColor(Color.BLUE);
+        tv.setBackgroundColor(Color.rgb(179, 255, 255));
         tv.setGravity(Gravity.CENTER);
         lv.addView(tv, lparams);
 
@@ -297,15 +418,51 @@ public class MainActivity extends AppCompatActivity {
         tv.setText("System.out.println(greeting + \" + World!)");
         tv.setTextSize(7);
         tv.setGravity(Gravity.CENTER);
-        tv.setBackgroundColor(Color.BLUE);
+        tv.setBackgroundColor(Color.rgb(179, 255, 255));
         lv.addView(tv, lparams);
 
         tv = new TextView(this);
         tv.setText("String greeting");
         tv.setTextSize(7);
         tv.setGravity(Gravity.CENTER);
-        tv.setBackgroundColor(Color.BLUE);
+        tv.setBackgroundColor(Color.rgb(179, 255, 255));
         lv.addView(tv, lparams);
+
+        tv = new TextView(this);
+        tv.setText(" Greeting");
+        tv.setTextSize(7);
+        tv.setGravity(Gravity.LEFT);
+        tv.setBackgroundColor(Color.rgb(255, 191, 128));
+        lv.addView(tv, lparams);
+
+        tv = new TextView(this);
+        tv.setText(" Good Morning");
+        tv.setTextSize(7);
+        tv.setGravity(Gravity.LEFT);
+        tv.setBackgroundColor(Color.rgb(255, 191, 128));
+        lv.addView(tv, lparams);
+
+        tv = new TextView(this);
+        tv.setText(" Good Afternoon");
+        tv.setTextSize(7);
+        tv.setGravity(Gravity.LEFT);
+        tv.setBackgroundColor(Color.rgb(255, 191, 128));
+        lv.addView(tv, lparams);
+
+        tv = new TextView(this);
+        tv.setText(" Good Evening");
+        tv.setTextSize(7);
+        tv.setGravity(Gravity.LEFT);
+        tv.setBackgroundColor(Color.rgb(255, 191, 128));
+        lv.addView(tv, lparams);
+
+        tv = new TextView(this);
+        tv.setText(" Good Night");
+        tv.setTextSize(7);
+        tv.setGravity(Gravity.LEFT);
+        tv.setBackgroundColor(Color.rgb(255, 191, 128));
+        lv.addView(tv, lparams);
+
 
         mainGrid.addView(lv);
         // END CELL 6
