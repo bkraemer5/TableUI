@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:textSize="7pt"
+        android:text="Rules void hello1 (int hour)"
+        android:gravity="center"
+        >
+    </TextView>
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:rowCount="3"
+        android:columnCount="3"
+        android:alignmentMode="alignMargins"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="properties"
+            android:textColor="#000000"
+            android:textSize="7pt"
+            android:background="#ffffff"
+            android:gravity="center"
+            android:layout_marginLeft="2pt"
+            android:layout_marginRight="2pt"
+            android:layout_marginTop="2pt"
+            android:layout_marginBottom="2pt"
+            ></TextView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="name"
+                android:textSize="7pt"
+                android:textColor="#000000"
+                android:background="#ffffff"
+                android:gravity="center"
+                ></TextView>
+            <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="category"
+            android:textSize="7pt"
+            android:textColor="#000000"
+            android:background="#ffffff"
+            android:gravity="center"
+            ></TextView>
+        </LinearLayout>
+
+
+    </GridLayout>
+
+</LinearLayout>

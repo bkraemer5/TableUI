@@ -7,7 +7,9 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.ViewGroup;
 import android.widget.GridLayout;
+import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.view.Gravity;
 
@@ -33,6 +35,13 @@ public class MainActivity extends AppCompatActivity {
         GridLayout.Spec col1 = GridLayout.spec(0, 1f);
         GridLayout.Spec col2 = GridLayout.spec(1, 1f);
         GridLayout.Spec col3 = GridLayout.spec(2, 1f);
+
+        LinearLayout.LayoutParams lparams = new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+        );
+
+        GridLayout.LayoutParams fillParams;
 
         ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
@@ -66,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         tv.setBackgroundColor(Color.WHITE);
         tv.setGravity(Gravity.CENTER);
 
-        GridLayout.LayoutParams fillParams = new GridLayout.LayoutParams(
+        fillParams = new GridLayout.LayoutParams(
                 row1, col1);
         fillParams.setMargins(2, 2, 2, 2);
         tv.setLayoutParams(fillParams);
@@ -79,10 +88,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         lv.setOrientation(LinearLayout.VERTICAL);
-        LinearLayout.LayoutParams lparams = new LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT
-        );
+
 
         lparams.setMargins(2, 2, 2, 2);
         lv.setLayoutParams(fillParams);
@@ -467,55 +473,34 @@ public class MainActivity extends AppCompatActivity {
         mainGrid.addView(lv);
         // END CELL 6
 
-        // CELL 7 ------------------------------------------
+        // Gray Numbering
         /*
-        GridLayout.Spec row3 = GridLayout.spec(2, 1f);
         fillParams = new GridLayout.LayoutParams(
-                row3, col1);
+                row1, col1);
+        fillParams.setMargins(2, 2, 2, 2);
 
         lv = new LinearLayout(this);
-
         lv.setOrientation(LinearLayout.VERTICAL);
 
-        lparams.setMargins(2, 2, 2, 2);
-        lv.setLayoutParams(fillParams);
+        tv = new TextView(this);
+        tv.setText("1");
+        tv.setTextSize(7);
+        tv.setGravity(Gravity.CENTER);
+        tv.setBackgroundColor(Color.rgb(217, 217, 217));
+        lv.addView(tv);
 
         tv = new TextView(this);
-        tv.setText(" Rule");
-        tv.setTypeface(Typeface.DEFAULT_BOLD);
-        tv.setTextColor(Color.BLACK);
+        tv.setText("2");
         tv.setTextSize(7);
-        tv.setBackgroundColor(Color.WHITE);
-        tv.setGravity(Gravity.LEFT);
-        lv.addView(tv, lparams);
-
-        tv = new TextView(this);
-        tv.setText(" R10");
-        tv.setTextSize(7);
-        tv.setGravity(Gravity.LEFT);
-        tv.setBackgroundColor(Color.WHITE);
-        lv.addView(tv, lparams);
-
-        tv = new TextView(this);
-        tv.setText(" R20");
-        tv.setTextSize(7);
-        tv.setGravity(Gravity.LEFT);
-        tv.setBackgroundColor(Color.WHITE);
-        lv.addView(tv, lparams);
-
-        tv = new TextView(this);
-        tv.setText("R20");
-        tv.setTextSize(7);
-        tv.setGravity(Gravity.LEFT);
-        tv.setBackgroundColor(Color.WHITE);
-        lv.addView(tv, lparams);
+        tv.setGravity(Gravity.CENTER);
+        tv.setBackgroundColor(Color.rgb(217, 217, 217));
+        lv.addView(tv);
 
         mainGrid.addView(lv);
 
          */
-        // END CELL 7
-
 
         setContentView(mainLinear);
+
     }
 }
